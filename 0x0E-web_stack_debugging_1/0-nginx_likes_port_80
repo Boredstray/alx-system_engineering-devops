@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-# Configure the server to run Nginx on 80 port
+# what’s keeping your Ubuntu container’s Nginx installation from listening on port 8?
+# configures nginx to run and listen to port 80
 
-ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-service nginx start
+rm /etc/nginx/sites-enabled/default
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx restart
